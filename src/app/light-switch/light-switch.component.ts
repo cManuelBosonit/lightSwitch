@@ -18,6 +18,7 @@ export class LightSwitchComponent implements OnInit {
   constructor( public fb: FormBuilder ) { }
 
   ngOnInit(): void {
+    this.changeColor();
   }
 
   changecheck(){
