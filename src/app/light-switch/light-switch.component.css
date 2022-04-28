@@ -1,0 +1,31 @@
+
+.mainContainer{
+    display: flex;
+    flex-direction: column;
+}
+.controller h1{
+    text-decoration: underline;
+}
+.controllerOptions{
+    display: flex;
+    flex-direction: row;
+}
+.controllerOptions select{
+    width: 10rem;
+}
+.traffic-light {
+    height: 34rem;
+    width: 12.5rem;
+    float: left;
+    background-color: #333;
+    border-radius: 2.5rem;
+    margin: 2rem 0;
+    padding: 1.25rem;
+}
+.light {
+    height: 9.25rem;
+    width: 9.25rem;
+    background-color: #111;
+    border-radius: 50%;
+    margin: 25px auto;
+}
