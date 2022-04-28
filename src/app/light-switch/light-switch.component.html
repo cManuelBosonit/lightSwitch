@@ -1,31 +1,41 @@
 <div class="mainContainer">
     <div class="traffic-light">
-      <div class="light"></div>
-      <div class="light"></div>
-      <div class="light"></div>
+        <div  class="light"
+            [ngClass]="onOff && showColor=='rojo' ? 'red' : 'off'"
+            >
+        </div>
+        <div  class="light"
+            [ngClass]="onOff && showColor=='amarillo' ? 'yellow' : 'off'"
+            >
+        </div>
+        <div  class="light"
+            [ngClass]="onOff && showColor=='verde' ? 'green' : 'off'"
+            >
+        </div>
     </div>
 
     <div class="controller">
         <h1>Controlador</h1>
         <div class="controllerOptions">
             <select 
-                    id="color" 
-                    name="color" 
-                    formControlName="light" 
-                    class="form-control"
-                    >
+            [(ngModel)]="selectedOption"
+            (change)="changeColor()"
+            class="form-control"
+            >
                 <option *ngFor="let color of lights" [value]="color">
-                    {{ color }}
+                        {{ color | titlecase }}
                 </option>
             </select>
             <div class="form-check">
                 <input class="form-check-input" 
                         type="checkbox"
+                        [(ngModel)]="onOff"
+                        (change)="changecheck()"
                         id="flexCheckDefault">
                 <label class="form-check-label" for="flexCheckDefault">
                   Encendido/Apagado
                 </label>
-            </div>
+            </div>          
         </div>
     </div>
 </div>
